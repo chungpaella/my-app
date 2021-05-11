@@ -5,7 +5,10 @@ import Movie from './Movie';
 export default function App() {
   return (
     <div>
-        <Movie/>
+        <h2>Inlagda filmer</h2>
+    <ul id="movie-list">
+        <Movie></Movie>
+    </ul>
     </div>
   
   );
