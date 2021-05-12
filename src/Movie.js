@@ -25,9 +25,10 @@ export default function App(props) {
   return (
     <div>
         <li>
-            <p>{props.title}</p>
-            <img src="../images/delete.png" alt="Delete movie" class="delete-movie"/>
-            {props.rating.map(() => <img src='../images/star.png' alt='Star='/>)}
+            <p>{props.movie.title}</p>
+            <img src="../images/delete.png" alt="Delete movie" class="delete-movie"
+                        onClick={() => {props.deleteMovie(props.movie.id)}}/>
+            {props.movie.rating.map(() => <img src='../images/star.png' alt='Star='/>)}
         </li> 
 
     </div>

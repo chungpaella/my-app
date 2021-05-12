@@ -6,7 +6,10 @@ export default function App(props) {
 
   return (
       <ul>
-        {props.movies.map(movie => <Movie key = {movie.id} title = {movie.title} rating ={movie.rating}/>)} 
+        {props.movies.map(movie => <Movie key = {movie.id} movie = {movie} deleteMovie ={props.deleteMovie}/>)}
+        
+
+    
       </ul>
   );
 }

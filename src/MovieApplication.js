@@ -20,7 +20,11 @@ export default function App() {
 
         setMovies([...movies, input_movie])
     }
-
+    function deleteMovie(id){
+        setMovies(movies.filter((movie) => movie.id !== id)) //Filtera bort alla movies som ej har samma id.
+        console.log("hej"); 
+        console.log(id);
+    }    
 
     return (
         <div class= "container">
@@ -28,7 +32,7 @@ export default function App() {
                 addMovie = {addMovie}
             />
 
-            <Movies movies = {movies} /> 
+            <Movies movies = {movies} deleteMovie={deleteMovie}/>
      
 
             <OrderByAlphaButton />
