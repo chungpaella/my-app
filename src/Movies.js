@@ -2,13 +2,13 @@ import React from 'react'
 import Movie from './Movie';
 
 
-export default function App() {
+export default function App(props) {
+
   return (
     <div>
-        <h2>Inlagda filmer</h2>
-    <ul id="movie-list">
-        <Movie></Movie>
-    </ul>
+      <ul id="movie-list">
+        {props.movies.map(movie => <Movie key = {movie.id} title = {movie.title} rating ={movie.rating}/>)}
+      </ul>
     </div>
   
   );
