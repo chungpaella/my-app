@@ -6,15 +6,25 @@ export default function App(props) {
     const input_rating = useRef();
 
     function saveMovie(){
+
         let title = input_title.current.value;
-        /*
-        let rating = [];
-        for(var i=0; i<input_rating.current.value; i++){
-            rating.push(input_rating.current.value)
+        let grade = input_rating.current.value
+
+        if (title === "") {
+            alert("Du måste ange en titel för att kunna spara filmen");
+            return false;
         }
-        console.log(rating)
-        */
-        props.addMovie(title,input_rating.current.value)
+      
+        if (grade === "0") {
+            alert("Du måste ange ett betyg för att kunna spara filmen")
+            return false;
+        }
+        const star_arr = [];
+        for(var i = 0; i < grade; i++) {
+          star_arr.push("*");
+        }
+        props.addMovie(title,star_arr)
+        
         input_title.current.value = ""
         input_rating.current.value = 0
     }

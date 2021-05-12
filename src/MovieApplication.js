@@ -6,12 +6,11 @@ import OrderByGradeButton from './OrderByGradeButton';
 
 export default function App() {
     
-    const [movies, setMovies] = useState([{
-        id:null, title:null, rating:null
-    }])
+    const [movies, setMovies] = useState([])
+
 
     function addMovie(input_title, input_rating) {   
-
+        
         const newId = movies.length > 0 ? movies[movies.length - 1].id + 1 : 1;
         let input_movie = {
             id: newId,
@@ -19,8 +18,7 @@ export default function App() {
             rating: input_rating
         }
 
-        setMovies(movies => {return [...movies, input_movie]})
-        console.log(movies)
+        setMovies([...movies, input_movie])
     }
 
 
@@ -30,9 +28,8 @@ export default function App() {
                 addMovie = {addMovie}
             />
 
-            <Movies
-                movies = {movies}
-            />
+            <Movies movies = {movies} /> 
+     
 
             <OrderByAlphaButton />
             <OrderByGradeButton />
