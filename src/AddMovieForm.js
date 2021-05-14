@@ -2,7 +2,7 @@ import React, {useRef} from 'react'
 
 export default function App(props) {
 
-    const input_title = useRef();
+    const input_title = useRef()
     const input_rating = useRef();
 
     function saveMovie(){
@@ -35,10 +35,10 @@ export default function App(props) {
             <legend>Lägg till en film</legend>
 
             <label>Titel:</label>
-            <input type="text" ref={input_title} class="form-control"/>
+            <input type="text" ref={input_title} className="form-control"  placeholder="Movie Title ..." />
 
             <label>Betyg:</label>
-            <select type="text" ref={input_rating} class="form-control">
+            <select type="text" ref={input_rating} className="form-control">
                 <option value="0">Välj betyg här...</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -46,7 +46,7 @@ export default function App(props) {
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-            <input class="btn btn-success mt-3" value="Spara film"
+            <input className="btn btn-success mt-3" value="Spara film"
                    onClick={saveMovie}
             />
         </div>

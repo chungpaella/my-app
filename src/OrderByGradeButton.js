@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-export default function App() {
+export default function App(props) {
   return (
     <div>
-         <input class="btn btn-primary mt-3" value="Betygsordning"/>
+      <input onClick={() => props.setOrderBy() } className="btn btn-primary mt-3" value="Betygs ordning "/>
     </div>
   
   );
