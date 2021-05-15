@@ -16,7 +16,7 @@ export default function App() {
             rating: input_rating
         }
         
-      setMovies(movies => {return [...movies, input_movie]})
+      setMovies([...movies, input_movie])
     }
     function deleteMovie(id){
         setMovies(movies.filter((movie) => movie.id !== id)) //Filtera bort alla movies som ej har samma id.
